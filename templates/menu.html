@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>SPOT · Menú</title>
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link href="/static/css/menu.css" rel="stylesheet">
+    <style>
+
+    </style>
+</head>
+
+<body>
+<div class="container">
+    <div class="logo"><img class="logo-img" src="/static/img/logo/Letras Blancas.png" alt="Logo spot en letras blancas"></div>
+    <div class="slogan">Carne 100% de res + Pan Brioche Casero </div>
+
+    <div class="toggle-buttons">
+        <button class="toggle-btn active" id="btn-especiales">ESPECIALES</button>
+        <button class="toggle-btn" id="btn-completo">+ DELICIAS</button>
+    </div>
+
+    <!-- SECCIÓN ESPECIALES -->
+    <div id="especiales-section">
+        <h1 class="section-title">LAS ESPECIALES</h1>
+
+        {% for producto in products.especiales %}
+        <div class="menu-item">
+            {% if producto.stock > 0 %}
+            <div class="item-header"><span class="item-name">{{ producto.product_name }}</span><span class="item-price"></span>${{ producto.price }}</div><div class="item-desc">{{ producto.description }}</div>
+            {% else %}
+            <div class="item-header"><span class="agotado-name">{{ producto.product_name }}</span><span class="agotado-price">Agotado por hoy</span></div><div class="item-desc">{{ producto.description }}</div>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+
+    <!-- SECCIÓN COMPLETA (todo excepto especiales) -->
+    <div id="completo-section" class="hidden">
+
+        <!-- 1 -->
+        <h1 class="section-title">CLÁSICAS</h1>
+        {% for producto in products.clasicas %}
+        <div class="menu-item">
+            {% if producto.stock > 0 %}
+            <div class="item-header"><span class="item-name">{{ producto.product_name }}</span><span class="item-price"></span>${{ producto.price }}</div><div class="item-desc">{{ producto.description }}</div>
+            {% else %}
+            {% endif %}
+        </div>
+        {% endfor %}
+        
+        <!-- 2 -->
+        <h1 class="section-title">CHORIPANES</h1>
+        {% for producto in products.choripanes %}
+        <div class="menu-item">
+            {% if producto.stock > 0 %}
+            <div class="item-header"><span class="item-name">{{ producto.product_name }}</span><span class="item-price"></span>${{ producto.price }}</div><div class="item-desc">{{ producto.description }}</div>
+            {% else %}
+            {% endif %}
+        </div>
+        {% endfor %}
+        
+        <!-- 3 -->
+        <h1 class="section-title">BEBIDAS</h1>
+        {% for producto in products.bebidas %}
+        <div class="menu-item">
+            {% if producto.stock > 0 %}
+            <div class="item-header"><span class="item-name">{{ producto.product_name }}</span><span class="item-price"></span>${{ producto.price }}</div><div class="item-desc">{{ producto.description }}</div>
+            {% else %}
+            {% endif %}
+        </div>
+        {% endfor %}
+        
+        <!-- 4 -->
+        <h1 class="section-title">SNACKS</h1>
+        {% for producto in products.snacks %}
+        <div class="menu-item">
+            {% if producto.stock > 0 %}
+            <div class="item-header"><span class="item-name">{{ producto.product_name }}</span><span class="item-price"></span>${{ producto.price }}</div><div class="item-desc">{{ producto.description }}</div>
+            {% else %}
+            {% endif %}
+        </div>
+        {% endfor %}
+        
+        <!-- 5 -->
+        <h1 class="section-title">POSTRES</h1>
+        {% for producto in products.postres %}
+        <div class="menu-item">
+            {% if producto.stock > 0 %}
+            <div class="item-header"><span class="item-name">{{ producto.product_name }}</span><span class="item-price"></span>${{ producto.price }}</div><div class="item-desc">{{ producto.description }}</div>
+            {% else %}
+            {% endif %}
+        </div>
+        {% endfor %}
+        
+        <div class="note">Lunes a Viernes · 5pm a 10pm</div>
+    </div>
+</div>
+
+<script>
+    const btnEspeciales = document.getElementById('btn-especiales');
+    const btnCompleto = document.getElementById('btn-completo');
+    const especialesDiv = document.getElementById('especiales-section');
+    const completoDiv = document.getElementById('completo-section');
+
+    btnEspeciales.addEventListener('click', () => {
+        especialesDiv.classList.remove('hidden');
+        completoDiv.classList.add('hidden');
+        btnEspeciales.classList.add('active');
+        btnCompleto.classList.remove('active');
+    });
+
+    btnCompleto.addEventListener('click', () => {
+        especialesDiv.classList.add('hidden');
+        completoDiv.classList.remove('hidden');
+        btnCompleto.classList.add('active');
+        btnEspeciales.classList.remove('active');
+    });
+</script>
+</body>
+</html>

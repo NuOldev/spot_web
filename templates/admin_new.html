@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin-office</title>
+    <style>
+        body {
+            background-color:rgb(240, 238, 235);
+        }
+        .formulario {
+            max-width: 50%;
+            text-align: center;
+            margin: 5rem auto;
+            box-shadow: 0 0 30px 5px rgba(69, 69, 69, 0.2);
+            border-radius: 15px;
+        }
+        .form-grid {
+            display: grid;
+            padding: 30px;
+            border: 1px solid rgb(218, 216, 216);
+            justify-content: center;
+        }
+        .labels{
+            padding: 8px;
+            display: flex;
+        }
+        .form-grid input {
+            width: 100%;
+            padding: 5px 0px;
+            border-radius: 5px;
+            border: 1px solid rgb(175, 175, 175);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="formulario">
+        <form class="form-grid" action="{{ url_for('new_product')}}" method="post">
+            <h1>Nuevos Productos</h1>
+            <label class="labels" for="name">Nombre</label>
+            <input type="text" name="name" id="name" required>
+            <label class="labels" for="description">Descripción</label>
+            <input type="text" name="description" id="description" required>
+            <label class="labels" for="precio">Precio</label>
+            <input type="text" name="price" id="price" required>
+            <label class="labels" for="stock">Stock</label>
+            <input type="text" name="stock" id="stock" required>
+            <label class="labels" for="category">Selecciona su categoría</label>
+                <select name="category" id="category">
+                    <option value="especiales">Especiales</option>
+                    <option value="clasicas">Clasicas</option>
+                    <option value="choripanes">Choripanes</option>
+                    <option value="snacks">Snacks</option>
+                    <option value="bebidas">Bebidas</option>
+                    <option value="postres">Postres</option>
+                </select>
+            <input type="submit">
+        </form>
+    </div>
+    
+</body>
+</html>

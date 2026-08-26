@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <style>
+                body {
+            /* background-color:rgb(240, 238, 235); */
+        }
+        .register-form {
+            margin: 50px auto;
+            max-width: 50%;
+        }
+        .form-grid {
+            display: grid;
+            padding: 30px;
+            border-radius: 10px;
+            justify-content: center;
+            box-shadow: 0px 0px 25px 1px #393539;
+        }
+        .labels{
+            padding: 8px;
+            display: flex;
+        }
+        .form-grid input {
+            background-color: rgb(194, 209, 221);
+            max-width: 90%;
+            padding: 5px 10px;
+            border-radius: 5px;
+            border: 1px solid rgb(175, 175, 175);
+        }
+        .submit{
+            max-width: 50%;
+            margin: 30px auto;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="register-form">
+        <form class="form-grid" action="{{ url_for('register') }}" method="post">
+            <h1>Formulario de Registro</h1>
+                <label class="labels" for="username">Nombre</label>
+                <input type="text" name="user_name" id="username" required>
+                <label class="labels" for="password">Password</label>
+                <input type="password" name="password" id="password" required>
+                <label class="labels" for="email">Correo Electrónico</label>
+                <input type="email" name="email" id="email" required>
+            <input class="submit" type="submit">
+        </form>
+    </div>
+    
+</body>
+</html>

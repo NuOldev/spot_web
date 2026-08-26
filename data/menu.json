@@ -1,0 +1,239 @@
+{
+    "especiales": [
+        {
+            "nombre_interno": "insignia",
+            "nombre_menu": "Spot",
+            "precio": 210,
+            "descripcion": "Camarones Rellenos con Queso Crema + Aros de Cebolla + Aderezo de Chipotle.",
+            "disponible": true,
+            "stock": 0,
+            "categoria": "especiales"
+        },
+        {
+            "nombre_interno": "parrillera",
+            "nombre_menu": "Parrillera",
+            "precio": 190,
+            "descripcion": "Arrachera Marinada + Pimiento, Cebolla y Queso asados + Chiles Toreados.",
+            "disponible": false,
+            "stock": 0,
+            "categoria": "especiales"
+        },
+        {
+            "nombre_interno": "pork-belly",
+            "nombre_menu": "Puercota",
+            "precio": 190,
+            "descripcion": "Pork Belly (150gr cocidos) + Cebolla Curtida y Aderezo de ajo",
+            "disponible": true,
+            "stock": 0,
+            "categoria": "especiales"
+        },
+        {
+            "nombre_interno": "aghori",
+            "nombre_menu": "Aghori",
+            "precio": 180,
+            "descripcion": "Pan negro + Chutney Spot + Aderezo de ajo",
+            "disponible": true,
+            "stock": 0,
+            "categoria": "especiales"
+        },
+        {
+            "nombre_interno": "boneless_burger",
+            "nombre_menu": "Boneless",
+            "precio": 170,
+            "descripcion": "Boneless Bañados con Ranch, RedHot y BBQ",
+            "disponible": true,
+            "stock": 0,
+            "categoria": "especiales"
+        },
+        {
+            "nombre_interno": "bajonera",
+            "nombre_menu": "Bajonera",
+            "precio": 160,
+            "descripcion": "Salchicha para asar + tocino + chistorra + Rufles o Doritos",
+            "disponible": true,
+            "stock": 0,
+            "categoria": "especiales"
+        },
+        {
+            "nombre_interno": "boluda",
+            "nombre_menu": "Boluda",
+            "precio": 150,
+            "descripcion": "Chorizo argentino + chimichurri casero",
+            "disponible": true,
+            "stock": 0,
+            "categoria": "especiales"
+        },
+        {
+            "nombre_interno": "kimo",
+            "nombre_menu": "Kimo",
+            "precio": 140,
+            "descripcion": "Mermelada de tocino + piña flameada y acanelada",
+            "disponible": true,
+            "stock": 0,
+            "categoria": "especiales"
+        },
+        {
+            "nombre_interno": "US Breakfast",
+            "nombre_menu": "USB",
+            "precio": 135,
+            "descripcion": "Huevo + tocino + jarabe de maple",
+            "disponible": true,
+            "stock": 0,
+            "categoria": "especiales"
+        },
+        {
+            "nombre_interno": "tocino con champinones",
+            "nombre_menu": "Funky Porcini",
+            "precio": 130,
+            "descripcion": "Champiñones + tocino",
+            "disponible": true,
+            "stock": 0,
+            "categoria": "especiales"
+        }
+    ],
+    "clasicas": [
+        {
+            "nombre_interno": "doble",
+            "nombre_menu": "Doble",
+            "precio": 130,
+            "descripcion": "Doble Carne + Doble Queso",
+            "disponible": true,
+            "stock": 1,
+            "categoria": "clasicas"
+        },
+        {
+            "nombre_interno": "hawaiana",
+            "nombre_menu": "Hawaiana",
+            "precio": 85,
+            "descripcion": "Piña asada + Jamón + queso",
+            "disponible": true,
+            "stock": 0,
+            "categoria": "clasicas"
+        },
+        {
+            "nombre_interno": "sencilla",
+            "nombre_menu": "Sencilla",
+            "precio": 75,
+            "descripcion": "Clásica con Lechuga, Tomate y Cebolla",
+            "disponible": true,
+            "stock": 1,
+            "categoria": "clasicas"
+        }
+    ],
+    "choripanes": [
+        {
+            "nombre_interno": "arrachera",
+            "nombre_menu": "c/Arrachera",
+            "precio": 140,
+            "descripcion": "Clásico + arrachera",
+            "disponible": true,
+            "stock": 1,
+            "categoria": "choripanes"
+        },
+        {
+            "nombre_interno": "chistorra",
+            "nombre_menu": "c/Chistorra",
+            "precio": 125,
+            "descripcion": "Clásico + chistorra",
+            "disponible": true,
+            "stock": 0,
+            "categoria": "choripanes"
+        },
+        {
+            "nombre_interno": "clasico",
+            "nombre_menu": "Clásico",
+            "precio": 90,
+            "descripcion": "Chorizo argentino + Chimichurri casero",
+            "disponible": true,
+            "stock": 1,
+            "categoria": "choripanes"
+        }
+    ],
+    "bebidas": [
+        {
+            "nombre_interno": "franciscano",
+            "nombre_menu": "Chocolate Franciscano",
+            "precio": 65,
+            "descripcion": "Chocolate caliente + 1/2oz Frangelico",
+            "disponible": true,
+            "stock": 1,
+            "categoria": "bebidas"
+        },
+        {
+            "nombre_interno": "limonada",
+            "nombre_menu": "Limonada",
+            "precio": 55,
+            "descripcion": "",
+            "disponible": true,
+            "stock": 0,
+            "categoria": "bebidas"
+        },
+        {
+            "nombre_interno": "chocolate",
+            "nombre_menu": "Chocolate Caliente",
+            "precio": 45,
+            "descripcion": "",
+            "disponible": true,
+            "stock": 0,
+            "categoria": "bebidas"
+        },
+        {
+            "nombre_interno": "refrescos",
+            "nombre_menu": "Refresco",
+            "precio": 30,
+            "descripcion": "Coca Cola, Sprite, Mundet",
+            "disponible": true,
+            "stock": 1,
+            "categoria": "bebidas"
+        }
+    ],
+    "snacks": [
+        {
+            "nombre_interno": "orden de boneless",
+            "nombre_menu": "Boneless",
+            "precio": 85,
+            "descripcion": "230gr de pechuga de pollo",
+            "disponible": true,
+            "stock": 1,
+            "categoria": "snacks"
+        },
+        {
+            "nombre_interno": "papas gajo",
+            "nombre_menu": "Papas Gajo",
+            "precio": 65,
+            "descripcion": "",
+            "disponible": true,
+            "stock": 1,
+            "categoria": "snacks"
+        },
+        {
+            "nombre_interno": "papas a la francesa",
+            "nombre_menu": "Papas a la Francesa",
+            "precio": 55,
+            "descripcion": "",
+            "disponible": true,
+            "stock": 0,
+            "categoria": "snacks"
+        }
+    ],
+    "postres": [
+        {
+            "nombre_interno": "postres",
+            "nombre_menu": "Flan",
+            "precio": 55,
+            "descripcion": "",
+            "disponible": true,
+            "stock": 0,
+            "categoria": "postres"
+        },
+        {
+            "nombre_interno": "postres",
+            "nombre_menu": "Carlotta",
+            "precio": 55,
+            "descripcion": "",
+            "disponible": true,
+            "stock": 1,
+            "categoria": "postres"
+        }
+    ]
+}

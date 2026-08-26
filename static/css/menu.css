@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: #1e1b1a;
+    font-family: 'Balsamiq Sans', cursive;
+    color: #ffffff;
+    padding: 1.5rem 1rem 2.5rem 1rem;
+}
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+.logo {
+    margin-bottom: 1rem;
+    display: flex;
+}
+.logo-img {
+    max-width:60%;
+    margin: auto;
+}
+.slogan {
+    text-align: center;
+    font-size: 0.75rem;
+    color: #888;
+    margin-top: -0.8rem;
+    margin-bottom: 1.5rem;
+}
+/* Botones toggle */
+.toggle-buttons {
+    display: flex;
+    gap: 0.8rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+.toggle-btn {
+    background: transparent;
+    border: 1px solid #ff792b;
+    color: #ff792b;
+    font-family: 'Balsamiq Sans', cursive;
+    font-weight: bold;
+    padding: 0.5rem 1.5rem;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: 0.2s;
+    font-size: 0.9rem;
+}
+.toggle-btn.active {
+    background: #ff792b;
+    color: black;
+}
+.section-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: -1px;
+    margin: 1.5rem 0 1rem 0;
+    border-bottom: 2px solid #c9662d;
+    display: inline-block;
+    padding-right: 1rem;
+}
+.sub-header {
+    font-size: 0.85rem;
+    color: #aaa;
+    margin-bottom: 1.2rem;
+    /* padding-left: 0.75rem; */
+}
+.menu-item {
+    margin-bottom: 1.2rem;
+}
+.item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+.item-name {
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+.agotado-name {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #bbb;
+    opacity: 0.5;
+}
+.agotado-price {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #bbb;
+    opacity: 0.5;
+}
+.item-price {
+    font-weight: 700;
+    color: #ff792b;
+    font-size: 1rem;
+}
+.item-desc {
+    font-size: 0.8rem;
+    color: #bbb;
+    margin-top: 0.2rem;
+    line-height: 1.3;
+}
+.two-col {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+.note {
+    text-align: center;
+    font-size: 0.7rem;
+    color: #555;
+    margin-top: 2rem;
+    border-top: 1px solid #222;
+    padding-top: 1.5rem;
+}
+.hidden {
+    display: none;
+}
