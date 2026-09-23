@@ -1,5 +1,5 @@
 from flask_login import UserMixin
-from sqlalchemy import UniqueConstraint, ForeignKey
+from sqlalchemy import ForeignKey
 from datetime import datetime
 from extentions import db, login_manager
 
@@ -33,8 +33,6 @@ class Product(db.Model):
     category = db.Column(db.String(50))
     add_date = db.Column(db.Date, default=datetime.utcnow)
     user_id = db.Column(db.Integer, ForeignKey('user.id'))
-    __table_args__ = (UniqueConstraint(
-        'product_name', 'user_id', name='restriccion'),)
 
     def __repr__(self):
         return f'<Product {self.product_name}>'

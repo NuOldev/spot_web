@@ -1,6 +1,7 @@
 import re
 from os import getenv
-from flask import Flask, render_template, request, redirect, url_for, flash
+from pathlib import Path
+from flask import Flask, render_template, request, redirect, url_for, flash, session
 from sqlalchemy.exc import IntegrityError
 from flask_login import login_user, logout_user, login_required, current_user
 from dotenv import load_dotenv
@@ -9,10 +10,14 @@ from models import Product, User
 
 
 def create_app():
-    """Create app & DB Configurations."""
+    """Create an app & DB Configurations."""
 
+    # Configuraciones
     app = Flask(__name__)
-    app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///menu.db"
+    path = Path(__file__).parent
+    db_path = path / "instance" / "menu.db"
+    db_path.parent.mkdir(parents=True, exist_ok=True)
+    app.config['SQLALCHEMY_DATABASE_URI'] = f"sqlite:///{db_path.as_posix()}"
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     load_dotenv()
     app.secret_key = getenv('SECRET_KEY')
@@ -77,7 +82,19 @@ def create_app():
                 stock = 0  # Valor por defecto si está vacío
             else:
                 stock = int(stock)
-            category = request.form.get('category', '')
+            category = request.form.get('category', '').strip()
+
+            errores = []
+
+            if not name:
+                errores.append('El nombre no puede estar vacío')
+            if not price:
+                errores.append('El precio no puede estar vacío')
+
+            if errores:
+                for error in errores:
+                    flash(error, 'error')
+                return render_template('admin_new.html')
 
             try:
                 new_product = Product(
@@ -90,7 +107,6 @@ def create_app():
                 db.session.add(new_product)
                 flash("Agregado con Éxito.")
                 db.session.commit()
-                print("Nuevo producto guardado correctamente")
                 return redirect(url_for('new_product'))
             except TypeError as e:
                 print(e)
@@ -129,30 +145,6 @@ def create_app():
         db.session.commit()
         return redirect(url_for('menu'))
 
-    @app.route('/register', methods=['GET', 'POST'])
-    def register():
-
-        if request.method == "POST":
-
-            name = request.form.get('user_name').strip()
-            password = request.form.get('password').strip()
-            email = request.form.get('email').strip()
-
-            try:
-                crypt_hash = bcrypt.generate_password_hash(password)
-                new_user = User(
-                    user_name=name, password_hash=crypt_hash, email=email)
-                db.session.add(new_user)
-                db.session.commit()
-                login_user(new_user)
-                return redirect(url_for('admin_office'))
-            except IntegrityError:
-                db.session.rollback()
-                flash("Error")
-                return render_template('register.html')
-
-        return render_template('register.html')
-
     @app.route('/login', methods=['GET', 'POST'])
     def login():
 
@@ -178,6 +170,7 @@ def create_app():
 
                 if check_password:
                     flash("Acceso Correcto", "success")
+                    session.permanent = True
                     login_user(user)
                     return redirect(url_for('admin_office'))
 

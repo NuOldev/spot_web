@@ -4,9 +4,9 @@
     box-sizing: border-box;
 }
 body {
-    background-color: #1e1b1a;
+    background-color: #e4e0e4;
     font-family: 'Balsamiq Sans', cursive;
-    color: #ffffff;
+    color: #332b2b;
     padding: 1.5rem 1rem 2.5rem 1rem;
 }
 .container {
@@ -18,13 +18,13 @@ body {
     display: flex;
 }
 .logo-img {
-    max-width:60%;
+    max-width:30%;
     margin: auto;
 }
 .slogan {
     text-align: center;
     font-size: 0.75rem;
-    color: #888;
+    color: #777070;
     margin-top: -0.8rem;
     margin-bottom: 1.5rem;
 }
@@ -62,7 +62,7 @@ body {
 }
 .sub-header {
     font-size: 0.85rem;
-    color: #aaa;
+    color: #524949;
     margin-bottom: 1.2rem;
     /* padding-left: 0.75rem; */
 }
@@ -83,23 +83,23 @@ body {
 .agotado-name {
     font-weight: 700;
     font-size: 1.1rem;
-    color: #bbb;
+    color: #908784;
     opacity: 0.5;
 }
 .agotado-price {
-    font-weight: 700;
-    font-size: 1.1rem;
-    color: #bbb;
+    font-weight: bolder;
+    font-size: 1.2rem;
+    color: #908784;
     opacity: 0.5;
 }
 .item-price {
-    font-weight: 700;
+    font-weight: bolder;
     color: #ff792b;
     font-size: 1rem;
 }
 .item-desc {
     font-size: 0.8rem;
-    color: #bbb;
+    color: #908784;
     margin-top: 0.2rem;
     line-height: 1.3;
 }
