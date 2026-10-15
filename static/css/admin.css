@@ -1,0 +1,41 @@
+body {
+    padding: 0;
+    margin: 0;
+    background-color: lightgray;
+}
+
+.title-container {
+    display: flex;
+    justify-content:center;
+    margin: 1.5em auto;
+}
+
+.title {
+    color: black;
+}
+
+.form-container {
+    margin: 2rem;
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.product-card {
+    box-shadow: 1px 0px 5px 2px grey;
+    border-radius: 5px;
+    flex: 1 1 150px;
+    text-align: center;
+}
+.product-card > p {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.5rem;
+}
+
+.product-card > a {
+    text-decoration: none;
+}
+
+button {
+    margin: 1rem;
+}
