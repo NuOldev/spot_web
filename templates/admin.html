@@ -8,26 +8,29 @@
 </head>
 <body>
 
-    <div class="title-container">
-        <h1 class="title">Panel de Administrador</h1>
-    </div>
+    <nav class="navbar">
+        <h1 class="title">SPOT - Administración</h1>
+    
+        <div class="nav-actions">
+            <form action="{{ url_for('new_product') }}" method="POST">
+                <button class="new-product" type="submit">Agregar Nuevo</button>
+            </form>
+            <a href="/logout">Salir</a>
+        </div>
+    </nav>
 
-    <form action="{{ url_for('new_product') }}" method="POST">
-        <button type="submit">Agregar Nuevo</button>
-    </form>
 
-    <div class="form-container">
+    <main class="cards-container">
         {% for product in products %}
         <div class="product-card">
             <p>{{ product.product_name }}</p>
-            <a class="enlace" href="{{ url_for('edit_product', product_id=product.product_id) }}">Editar</a>
-            <form class="button" action="{{ url_for('delete_product', product_id=product.product_id) }}" method="POST">
-                <button type="submit">Eliminar</button>
+            <a href="{{ url_for('edit_product', product_id=product.product_id) }}">Editar</a>
+            <form class="delete-button" action="{{ url_for('delete_product', product_id=product.product_id) }}" method="POST">
+                <button type="button">Eliminar</button>
             </form>
         </div>
         {% endfor %}
-    </div>    
-        <a href="/logout">Salir</a>
+    </main>    
 
 </body>
 </html>
